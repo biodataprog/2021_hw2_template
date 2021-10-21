@@ -45,9 +45,12 @@ with open(gff,"r") as fh:
         # example of printing out some of the data in the file
 #        print(row[0],row[2],row[3],row[4],row[6])
 
+genome_len = 0
 # open the FASTA file and read it witjh the aspairs() function
 with open(fasta,"r") as f:
    seqs = dict(aspairs(f))
    print("there are", len(seqs.keys()),"contigs")
    for seqid in seqs.keys():
        print("seqname is",seqid)
+
+print("Genome length is {} basepairs".format(genome_len))
